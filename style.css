@@ -1,0 +1,88 @@
+html{
+    background: rgb(32,204,207);
+    background: -moz-linear-gradient(0deg, rgba(32,204,207,1) 48%, rgba(45,68,253,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(32,204,207,1) 48%, rgba(45,68,253,1) 100%);
+    background: linear-gradient(0deg, rgba(32,204,207,1) 48%, rgba(45,68,253,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#20cccf",endColorstr="#2d44fd",GradientType=1); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    position:relative
+
+}
+.zipSearch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.zipSearch input{
+    border: 1px black;
+    border-radius: 5px;
+    height: 25px;
+    width: 175px;
+    margin: 10px;
+}
+.zipSearch button{
+    border: 1px black;
+    border-radius: 5px;
+    height: 27px;
+    width: 75px;
+}
+.weatherTiles{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+}
+.weatherTile{
+    background-color: whitesmoke;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    margin: 25px 15px;
+    padding: 10px 20px;
+    box-shadow: 8px 8px rgba(0,0,0,0.2);
+    
+}
+.closeTile{
+    background-color: red;
+    color:white;
+    position: relative;
+    left: 50%;
+    border: solid 1px red;
+    border-radius: 5px;
+    height: 15px;
+    width: 15px;
+
+}
+.closeTile p{
+    justify-content: center;
+    position: relative;
+    top: -18px;
+    right: -2px;
+    width: 5px;
+    height: 5px;
+}
+.forcast{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.forcast h3{
+    font-size: 45px;
+    margin: -5px;
+}
+.skyCondition{
+    font-size:20px;
+}
+.skyCondition img{
+    height: auto;
+    width: 35px;
+    margin: -5px;
+}
