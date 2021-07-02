@@ -30,6 +30,7 @@ html{
 }
 .weatherTiles{
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -66,15 +67,16 @@ html{
     right: -2px;
     width: 5px;
     height: 5px;
+    cursor: pointer;
 }
-.forcast{
+.forecast{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
-.forcast h3{
+.forecast h3{
     font-size: 45px;
     margin: -5px;
 }
@@ -85,4 +87,28 @@ html{
     height: auto;
     width: 35px;
     margin: -5px;
+}
+#weatherTile2{
+    display: none;
+}
+#weatherTile3{
+    display: none;
+}
+#weatherTile4{
+    display: none;
+}
+#weatherTile5{
+    display: none;
+}
+#weatherTile6{
+    display: none;
+}
+#weatherTile7{
+    display: none;
+}
+#weatherTile8{
+    display: none;
+}
+#weatherTile9{
+    display: none;
 }
