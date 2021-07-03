@@ -9,11 +9,15 @@
     <title>Weather App</title>
 </head>
 <body>
+    <div class="container">
 <div class="zipSearch">
     <input type="text" class="zipCode" name="zipCode" id="zipCode" placeholder="Enter Zip Code">
     <button type="submit">Search</button>
 </div>
-<div class="container">
+<div class="quote">
+    <p>”The best thing one can do when it’s raining is to let it rain.”</p>
+</div>
+
 <div class="weatherTile">
         <div class="currentWeather">
         <h2 class="locationName">Los Angeles, CA</h2> 
@@ -21,6 +25,61 @@
             <p class="skyCondition"><img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="sunny"> Sunny</p>
             <p class="highLow">99<span>&#176;</span>/64<span>&#176;</span></p>
         </div>
+</div>
+<div class="currentInfo">
+    <div class="lineItems">
+        <p id="feelsLike">Feels Like:</p>
+    </div>
+    <div class="lineItems">
+        <p id="windSpeed">Wind Speed:</p>
+    </div>
+    <div class="lineItems">
+        <p id="windDirection">Wind Direction:</p>
+    </div>
+    <div class="lineItems">
+        <p  id="humidity">Humidity:</p>
+    </div>
+    <div class="lineItems">
+        <p id="uv">UV:</p>
+    </div>
+</div>
+<div class="forecast">
+
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
+    <div class="forecastDayCard">
+        <p>Date</p>
+        <p>icon</p>
+        <p>Hi/Lo</p>
+    </div>
 </div>
 </div>
     <script src="script.js"></script>

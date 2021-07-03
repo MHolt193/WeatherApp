@@ -1,12 +1,24 @@
 html{
-    background-image: url(/img/rain-14884912.jpg)
+    background-image: url(/img/rain-14884912.jpg);
     background-size: cover;
     background-position: center;
     min-height: 100%;
     position:relative
 
 }
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 0.5fr 0.5fr 2fr 1.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". zipSearch ."
+      ". quote ."
+      "weatherTile currentInfo currentInfo"
+      "forecast forecast forecast"; 
+  }
 .zipSearch{
+    grid-area: zipSearch;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,64 +31,88 @@ html{
     margin: 10px;
 }
 .zipSearch button{
-    border: 1px black;
+    border: solid 1px black;
     border-radius: 5px;
     height: 27px;
     width: 75px;
 }
-.weatherTiles{
+.quote{
+    grid-area: quote;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.3);
     display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    align-items: center;
     justify-content: center;
-    
+    align-items: center;
+    color: rgb(206, 202, 202)
 }
+
 .weatherTile{
-    background-color: whitesmoke;
-    position: relative;
+    background-color: rgba(240, 238, 238, 0.9);
+    grid-area: weatherTile;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 7px;
-    margin: 25px 15px;
-    padding: 10px 20px;
+    margin: 25px;
+    padding: 10px 5px;
+    max-width: 60%;
     box-shadow: 8px 8px 6px rgba(0,0,0,0.2);
     
 }
-.closeTile{
-    background-color: red;
-    color:white;
-    position: relative;
-    left: 50%;
-    border: solid 1px red;
-    border-radius: 5px;
-    height: 15px;
-    width: 15px;
 
-}
-.closeTile:hover{
-    border: solid 2px black;
-    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-}
-.closeTile p{
-    justify-content: center;
-    position: relative;
-    top: -18px;
-    right: -2px;
-    width: 5px;
-    height: 5px;
-    cursor: pointer;
-}
-.forecast{
+.currentInfo{
+    grid-area: currentInfo;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    justify-content: right;
+    color:rgb(255, 255, 255);
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.lineItems{
+    border-bottom: solid 1px white;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 1%;
+}
+.lineItems p{
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+.forecast{
+    grid-area: forecast;
+    display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.forecast h3{
+.forecastDayCard{
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    background-color: rgba(0,0,0,0.5);
+    border: solid black 1px;
+    width: 14.28%;
+    max-width: 14.28%;
+    height: 85%;
+}
+.currentWeather{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 85%;
+    margin: -20px 0px;
+}
+.currentWeather h3{
     font-size: 45px;
     margin: -5px;
 }
