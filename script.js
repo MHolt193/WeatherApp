@@ -51,15 +51,15 @@ let forecast = document.querySelector(`#highLow${currentTiles+1}`);
 
 })
 //declare tile close button
-let closeTile = document.getElementById('closeTile');
+let closeTile = document.getElementsByClassName('closeTile');
 
 //add event listener for click on tile close
-closeTile.addEventListener('click', (event)=>{
-    console.log(currentTiles)
-    let weatherTile = document.getElementById(`weatherTile${currentTiles}`)
-    weatherTile.style.display = 'none';
+for(let i = 0; i< closeTile.length; i++){
+closeTile[i].addEventListener('click', () => {
+    closeTile[i].parentElement.style.display = 'none';
     currentTiles--;
 })
+}
 
 
 

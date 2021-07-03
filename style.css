@@ -46,7 +46,7 @@ html{
     border-radius: 7px;
     margin: 25px 15px;
     padding: 10px 20px;
-    box-shadow: 8px 8px rgba(0,0,0,0.2);
+    box-shadow: 8px 8px 6px rgba(0,0,0,0.2);
     
 }
 .closeTile{
@@ -59,6 +59,10 @@ html{
     height: 15px;
     width: 15px;
 
+}
+.closeTile:hover{
+    border: solid 2px black;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
 }
 .closeTile p{
     justify-content: center;
