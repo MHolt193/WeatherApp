@@ -47,7 +47,7 @@ html{
 }
 
 .weatherTile{
-    background-color: rgba(240, 238, 238, 0.9);
+    background-color: rgba(240, 238, 238, 0.7);
     grid-area: weatherTile;
     display: flex;
     justify-content: center;
