@@ -1,9 +1,5 @@
 html{
-    background: rgb(32,204,207);
-    background: -moz-linear-gradient(0deg, rgba(32,204,207,1) 48%, rgba(45,68,253,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(32,204,207,1) 48%, rgba(45,68,253,1) 100%);
-    background: linear-gradient(0deg, rgba(32,204,207,1) 48%, rgba(45,68,253,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#20cccf",endColorstr="#2d44fd",GradientType=1); 
+    background-image: url(/img/rain-14884912.jpg)
     background-size: cover;
     background-position: center;
     min-height: 100%;
