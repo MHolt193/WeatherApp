@@ -92,6 +92,7 @@ html{
 
 }
 .forecastDayCard{
+    color: whitesmoke;
     display: flex;
     border-radius: 5px;
     flex-direction: column;
@@ -103,6 +104,10 @@ html{
     width: 14.28%;
     max-width: 14.28%;
     height: 85%;
+}
+.forecastDayCard p img{
+    height: 15px;
+    width: 15px;
 }
 .currentWeather{
     display: flex;
