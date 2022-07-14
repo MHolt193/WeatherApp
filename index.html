@@ -1,89 +1,109 @@
 <!DOCTYPE html>
 <html lang="en" class="page">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="get FREE weather report for your current location along with a seven day forcast. search another location by zip code or city name and state"/>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/304580dc0a.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="get FREE weather report for your current location along with a seven day forcast. search another location by zip code or city name and state"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/304580dc0a.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1 style="display: none;">Current Weather</h1>
-<div class="zipSearch">
-    <input type="text" class="zipCode" name="zipCode" id="zipCode" placeholder="Enter Zip Code or City, State" required>
-    <button type="submit" id="search">Search</button>
-</div>
-<div class="quote">
-    <p class="quoteText">”Sunshine and happiness go together like fish and chips!”</p>
-</div>
+      <h1 style="display: none">Current Weather</h1>
+      <form class="zipSearch" id="search">
+        <input
+          type="text"
+          class="zipCode"
+          name="zipCode"
+          id="zipCode"
+          placeholder="Enter Zip Code or City, State"
+          required
+        />
+        <button type="submit" >Search</button>
+      </form>
+      <div class="quote">
+        <p class="quoteText">
+          ”Sunshine and happiness go together like fish and chips!”
+        </p>
+      </div>
 
-<div class="weatherTile">
+      <div class="weatherTile">
         <div class="currentWeather">
-        <h2 class="locationName">Los Angeles, CA</h2> 
-            <h3 class="currentTemp">85<span>&#176;</span></h3>
-            <p class="skyCondition"><img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="sunny"> Sunny</p>
-            <p class="highLow">99<span>&#176;</span>/64<span>&#176;</span></p>
+          <h2 class="locationName">Los Angeles, CA</h2>
+          <h3 class="currentTemp">85<span>&#176;</span></h3>
+          <p class="skyCondition">
+            <img
+              src="//cdn.weatherapi.com/weather/64x64/day/113.png"
+              alt="sunny"
+            />
+            Sunny
+          </p>
+          <p class="highLow">99<span>&#176;</span>/64<span>&#176;</span></p>
         </div>
-</div>
-<div class="currentInfo">
-    <div class="lineItems">
-        <p id="feelsLike">Feels Like:</p>
+      </div>
+      <div class="currentInfo">
+        <div class="lineItems">
+          <p id="feelsLike">Feels Like:</p>
+        </div>
+        <div class="lineItems">
+          <p id="windSpeed">Wind Speed:</p>
+        </div>
+        <div class="lineItems">
+          <p id="windDirection">Wind Direction:</p>
+        </div>
+        <div class="lineItems">
+          <p id="humidity">Humidity:</p>
+        </div>
+        <div class="lineItems">
+          <p id="uv">UV:</p>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="forecastDayCard" id="forecastDayCard1">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+        <div class="forecastDayCard" id="forecastDayCard2">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+        <div class="forecastDayCard" id="forecastDayCard3">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+        <div class="forecastDayCard" id="forecastDayCard4">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+        <div class="forecastDayCard" id="forecastDayCard5">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+        <div class="forecastDayCard" id="forecastDayCard6">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+        <div class="forecastDayCard" id="forecastDayCard7">
+          <p>Date</p>
+          <p>icon</p>
+          <p>Hi/Lo</p>
+        </div>
+      </div>
     </div>
-    <div class="lineItems">
-        <p id="windSpeed">Wind Speed:</p>
-    </div>
-    <div class="lineItems">
-        <p id="windDirection">Wind Direction:</p>
-    </div>
-    <div class="lineItems">
-        <p  id="humidity">Humidity:</p>
-    </div>
-    <div class="lineItems">
-        <p id="uv">UV:</p>
-    </div>
-</div>
-<div class="forecast">
-
-    <div class="forecastDayCard" id='forecastDayCard1'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-    <div class="forecastDayCard" id='forecastDayCard2'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-    <div class="forecastDayCard" id='forecastDayCard3'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-    <div class="forecastDayCard" id='forecastDayCard4'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-    <div class="forecastDayCard" id='forecastDayCard5'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-    <div class="forecastDayCard" id='forecastDayCard6'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-    <div class="forecastDayCard" id='forecastDayCard7'>
-        <p>Date</p>
-        <p>icon</p>
-        <p>Hi/Lo</p>
-    </div>
-</div>
-</div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
