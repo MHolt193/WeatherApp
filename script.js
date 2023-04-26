@@ -61,6 +61,7 @@ addEventListener('load', () => {
     .then(response => response.json())
         .then(data => {
             console.log(data)
+            locationName.textContent = `${data.location.name}, ${data.location.region}`;
             currentTemp.innerHTML= `${data.current['temp_f']}<span>&#176;</span>`; 
             skyCondition.innerHTML = `<img src="${data.current.condition.icon}" alt="icon">${data.current.condition.text}`
             switch(data.current.condition.text){
@@ -131,7 +132,6 @@ addEventListener('load', () => {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        locationName.textContent = `${data.city_name}, ${data.state_code}`;
         forecastDayCard1.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>/Lo:${data.data[1].min_temp}<span>&#176;</span></p>`
         forecastDayCard2.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>/Lo:${data.data[2].min_temp}<span>&#176;</span></p>`
         forecastDayCard3.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>/Lo:${data.data[3].min_temp}<span>&#176;</span></p>`
@@ -156,7 +156,7 @@ search.addEventListener('submit', (e) =>{
             console.log(data)
             currentTemp.innerHTML= `${data.current['temp_f']}<span>&#176;</span>`; 
             skyCondition.innerHTML = `<img src="${data.current.condition.icon}" alt="icon">${data.current.condition.text}`
-            
+            locationName.textContent = `${data.location.name}, ${data.location.region}`;
             switch(data.current.condition.text){
                 case "Sunny" :
                 case "Clear":
@@ -227,7 +227,6 @@ search.addEventListener('submit', (e) =>{
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        locationName.textContent = `${data.city_name}, ${data.state_code}`;
         forecastDayCard1.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>/Lo:${data.data[1].min_temp}<span>&#176;</span></p>`
         forecastDayCard2.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>/Lo:${data.data[2].min_temp}<span>&#176;</span></p>`
         forecastDayCard3.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>/Lo:${data.data[3].min_temp}<span>&#176;</span></p>`
@@ -242,7 +241,6 @@ search.addEventListener('submit', (e) =>{
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        locationName.textContent = `${data.city_name}, ${data.state_code}`;
         forecastDayCard1.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>/Lo:${data.data[1].min_temp}<span>&#176;</span></p>`
         forecastDayCard2.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>/Lo:${data.data[2].min_temp}<span>&#176;</span></p>`
         forecastDayCard3.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>/Lo:${data.data[3].min_temp}<span>&#176;</span></p>`
