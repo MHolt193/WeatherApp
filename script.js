@@ -222,7 +222,7 @@ search.addEventListener('submit', (e) =>{
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${weatherbitKey}&units=I&days=8&&postal_code=${zipCode.value}&country=US`)
     .then(response => response.json())
     .then(data => {
-        forecastDayCard1.innerHTML = `<p>${data.data[0].datetime}</p><img class="icon" src="/img/icons/${data.data[0].weather.icon}.png" alt="icon"><p>Hi:${data.data[0].max_temp}<span>&#176;</span>F/Lo:${data.data[0].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard1.innerHTML = `<p>${data.data[0].datetime}</p><img class="icon" src="/img/icons/${data.data[0].weather.icon}.png" alt="icon"><p>Hi:${data.data[0].max_temp}<span>&#176;</span>/Lo:${data.data[0].min_temp}<span>&#176;</span>F</p>`
         forecastDayCard2.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>F/Lo:${data.data[1].min_temp}<span>&#176;</span>F</p>`
         forecastDayCard3.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>F/Lo:${data.data[2].min_temp}<span>&#176;</span>F</p>`
         forecastDayCard4.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>F/Lo:${data.data[3].min_temp}<span>&#176;</span>F</p>`
