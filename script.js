@@ -52,7 +52,6 @@ addEventListener('load', () => {
     if(navigator.geolocation){
 
         navigator.geolocation.getCurrentPosition(position => {
-            console.log(position.coords.latitude)
          let lat = position.coords.latitude
          let long = position.coords.longitude
         
@@ -60,9 +59,8 @@ addEventListener('load', () => {
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${long}&days=10`,)
     .then(response => response.json())
         .then(data => {
-            console.log(data)
             locationName.textContent = `${data.location.name}, ${data.location.region}`;
-            currentTemp.innerHTML= `${data.current['temp_f']}<span>&#176;</span>`; 
+            currentTemp.innerHTML= `${data.current['temp_f']}<span>&#176;</span>F`; 
             skyCondition.innerHTML = `<img src="${data.current.condition.icon}" alt="icon">${data.current.condition.text}`
             switch(data.current.condition.text){
                 case "Sunny" :
@@ -121,8 +119,8 @@ addEventListener('load', () => {
                 html.style.backgroundImage = 'url(img/sunny-hillside-1407934.jpg)';
                 quote.textContent = randomQuote(sunnyQuote);
             }
-            highLow.innerHTML =`Hi:${data.forecast.forecastday[0].day.maxtemp_f}<span>&#176;</span$>/Lo:${data.forecast.forecastday[0].day.mintemp_f}<span>&#176;</span>`;
-            feelsLike.innerHTML =`<i class="fas fa-thermometer-full"></i> Feels Like: ${data.current.feelslike_f}<span>&#176;</span>`;
+            highLow.innerHTML =`Hi:${data.forecast.forecastday[0].day.maxtemp_f}<span>&#176;</span$>F/Lo:${data.forecast.forecastday[0].day.mintemp_f}<span>&#176;</span>F`;
+            feelsLike.innerHTML =`<i class="fas fa-thermometer-full"></i> Feels Like: ${data.current.feelslike_f}<span>&#176;</span>F`;
             windSpeed.innerHTML = `<i class="fas fa-wind"></i> Wind Speed: ${data.current.wind_mph} MPH`;
             windDirection.innerHTML = ` <i class="fas fa-compass"></i> Wind Direction: ${data.current.wind_dir}`;
             humidity.innerHTML = `<i class="fas fa-water"></i> Humidity: ${data.current.humidity}%`
@@ -131,14 +129,13 @@ addEventListener('load', () => {
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=7d211968c32542f1bb96c055f24013e0&units=I&days=8&&lat=${lat}&lon=${long}&country=US`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        forecastDayCard1.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>/Lo:${data.data[1].min_temp}<span>&#176;</span></p>`
-        forecastDayCard2.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>/Lo:${data.data[2].min_temp}<span>&#176;</span></p>`
-        forecastDayCard3.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>/Lo:${data.data[3].min_temp}<span>&#176;</span></p>`
-        forecastDayCard4.innerHTML = `<p>${data.data[4].datetime}</p><img class="icon" src="/img/icons/${data.data[4].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>/Lo:${data.data[4].min_temp}<span>&#176;</span></p>`
-        forecastDayCard5.innerHTML = `<p>${data.data[5].datetime}</p><img class="icon" src="/img/icons/${data.data[5].weather.icon}.png" alt="icon"><p>Hi:${data.data[5].max_temp}<span>&#176;</span>/Lo:${data.data[5].min_temp}<span>&#176;</span></p>`
-        forecastDayCard6.innerHTML = `<p>${data.data[6].datetime}</p><img class="icon" src="/img/icons/${data.data[6].weather.icon}.png" alt="icon"><p>Hi:${data.data[6].max_temp}<span>&#176;</span>/Lo:${data.data[6].min_temp}<span>&#176;</span></p>`
-        forecastDayCard7.innerHTML = `<p>${data.data[7].datetime}</p><img class="icon" src="/img/icons/${data.data[7].weather.icon}.png" alt="icon"><p>Hi:${data.data[7].max_temp}<span>&#176;</span>/Lo:${data.data[7].min_temp}<span>&#176;</span></p>`
+        forecastDayCard1.innerHTML = `<p>${data.data[0].datetime}</p><img class="icon" src="/img/icons/${data.data[0].weather.icon}.png" alt="icon"><p>Hi:${data.data[0].max_temp}<span>&#176;</span>F/Lo:${data.data[0].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard2.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>F/Lo:${data.data[1].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard3.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>F/Lo:${data.data[2].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard4.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>F/Lo:${data.data[3].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard5.innerHTML = `<p>${data.data[4].datetime}</p><img class="icon" src="/img/icons/${data.data[4].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>F/Lo:${data.data[4].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard6.innerHTML = `<p>${data.data[5].datetime}</p><img class="icon" src="/img/icons/${data.data[5].weather.icon}.png" alt="icon"><p>Hi:${data.data[5].max_temp}<span>&#176;</span>F/Lo:${data.data[5].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard7.innerHTML = `<p>${data.data[6].datetime}</p><img class="icon" src="/img/icons/${data.data[6].weather.icon}.png" alt="icon"><p>Hi:${data.data[6].max_temp}<span>&#176;</span>F/Lo:${data.data[6].min_temp}<span>&#176;</span>F</p>`
 
     });
 })    
@@ -153,8 +150,7 @@ search.addEventListener('submit', (e) =>{
     fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${zipCode.value}&days=10`,)
     .then(response => response.json())
         .then(data => {
-            console.log(data)
-            currentTemp.innerHTML= `${data.current['temp_f']}<span>&#176;</span>`; 
+            currentTemp.innerHTML= `${data.current['temp_f']}<span>&#176;</span>F`; 
             skyCondition.innerHTML = `<img src="${data.current.condition.icon}" alt="icon">${data.current.condition.text}`
             locationName.textContent = `${data.location.name}, ${data.location.region}`;
             switch(data.current.condition.text){
@@ -215,8 +211,8 @@ search.addEventListener('submit', (e) =>{
                 quote.textContent = randomQuote(sunnyQuote);
             }
 
-            highLow.innerHTML =`Hi:${data.forecast.forecastday[0].day.maxtemp_f}<span>&#176;</span$>/Lo:${data.forecast.forecastday[0].day.mintemp_f}<span>&#176;</span>`;
-            feelsLike.innerHTML =`<i class="fas fa-thermometer-full"></i> Feels Like: ${data.current.feelslike_f}<span>&#176;</span>`;
+            highLow.innerHTML =`Hi:${data.forecast.forecastday[0].day.maxtemp_f}<span>&#176;</span$>F/Lo:${data.forecast.forecastday[0].day.mintemp_f}<span>&#176;</span>F`;
+            feelsLike.innerHTML =`<i class="fas fa-thermometer-full"></i> Feels Like: ${data.current.feelslike_f}<span>&#176;</span>F`;
             windSpeed.innerHTML = `<i class="fas fa-wind"></i> Wind Speed: ${data.current.wind_mph} MPH`;
             windDirection.innerHTML = ` <i class="fas fa-compass"></i> Wind Direction: ${data.current.wind_dir}`;
             humidity.innerHTML = `<i class="fas fa-water"></i> Humidity: ${data.current.humidity}%`
@@ -226,28 +222,27 @@ search.addEventListener('submit', (e) =>{
     fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${weatherbitKey}&units=I&days=8&&postal_code=${zipCode.value}&country=US`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        forecastDayCard1.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>/Lo:${data.data[1].min_temp}<span>&#176;</span></p>`
-        forecastDayCard2.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>/Lo:${data.data[2].min_temp}<span>&#176;</span></p>`
-        forecastDayCard3.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>/Lo:${data.data[3].min_temp}<span>&#176;</span></p>`
-        forecastDayCard4.innerHTML = `<p>${data.data[4].datetime}</p><img class="icon" src="/img/icons/${data.data[4].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>/Lo:${data.data[4].min_temp}<span>&#176;</span></p>`
-        forecastDayCard5.innerHTML = `<p>${data.data[5].datetime}</p><img class="icon" src="/img/icons/${data.data[5].weather.icon}.png" alt="icon"><p>Hi:${data.data[5].max_temp}<span>&#176;</span>/Lo:${data.data[5].min_temp}<span>&#176;</span></p>`
-        forecastDayCard6.innerHTML = `<p>${data.data[6].datetime}</p><img class="icon" src="/img/icons/${data.data[6].weather.icon}.png" alt="icon"><p>Hi:${data.data[6].max_temp}<span>&#176;</span>/Lo:${data.data[6].min_temp}<span>&#176;</span></p>`
-        forecastDayCard7.innerHTML = `<p>${data.data[7].datetime}</p><img class="icon" src="/img/icons/${data.data[7].weather.icon}.png" alt="icon"><p>Hi:${data.data[7].max_temp}<span>&#176;</span>/Lo:${data.data[7].min_temp}<span>&#176;</span></p>`
+        forecastDayCard1.innerHTML = `<p>${data.data[0].datetime}</p><img class="icon" src="/img/icons/${data.data[0].weather.icon}.png" alt="icon"><p>Hi:${data.data[0].max_temp}<span>&#176;</span>F/Lo:${data.data[0].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard2.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>F/Lo:${data.data[1].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard3.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>F/Lo:${data.data[2].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard4.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>F/Lo:${data.data[3].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard5.innerHTML = `<p>${data.data[4].datetime}</p><img class="icon" src="/img/icons/${data.data[4].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>F/Lo:${data.data[4].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard6.innerHTML = `<p>${data.data[5].datetime}</p><img class="icon" src="/img/icons/${data.data[5].weather.icon}.png" alt="icon"><p>Hi:${data.data[5].max_temp}<span>&#176;</span>F/Lo:${data.data[4].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard7.innerHTML = `<p>${data.data[6].datetime}</p><img class="icon" src="/img/icons/${data.data[6].weather.icon}.png" alt="icon"><p>Hi:${data.data[6].max_temp}<span>&#176;</span>F/Lo:${data.data[6].min_temp}<span>&#176;</span>F</p>`
 
     });
         }else{
             fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${weatherbitKey}&units=I&days=8&city=${zipCode.value}&country=US`)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        forecastDayCard1.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>/Lo:${data.data[1].min_temp}<span>&#176;</span></p>`
-        forecastDayCard2.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>/Lo:${data.data[2].min_temp}<span>&#176;</span></p>`
-        forecastDayCard3.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>/Lo:${data.data[3].min_temp}<span>&#176;</span></p>`
-        forecastDayCard4.innerHTML = `<p>${data.data[4].datetime}</p><img class="icon" src="/img/icons/${data.data[4].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>/Lo:${data.data[4].min_temp}<span>&#176;</span></p>`
-        forecastDayCard5.innerHTML = `<p>${data.data[5].datetime}</p><img class="icon" src="/img/icons/${data.data[5].weather.icon}.png" alt="icon"><p>Hi:${data.data[5].max_temp}<span>&#176;</span>/Lo:${data.data[5].min_temp}<span>&#176;</span></p>`
-        forecastDayCard6.innerHTML = `<p>${data.data[6].datetime}</p><img class="icon" src="/img/icons/${data.data[6].weather.icon}.png" alt="icon"><p>Hi:${data.data[6].max_temp}<span>&#176;</span>/Lo:${data.data[6].min_temp}<span>&#176;</span></p>`
-        forecastDayCard7.innerHTML = `<p>${data.data[7].datetime}</p><img class="icon" src="/img/icons/${data.data[7].weather.icon}.png" alt="icon"><p>Hi:${data.data[7].max_temp}<span>&#176;</span>/Lo:${data.data[7].min_temp}<span>&#176;</span></p>`
+
+        forecastDayCard1.innerHTML = `<p>${data.data[0].datetime}</p><img class="icon" src="/img/icons/${data.data[0].weather.icon}.png" alt="icon"><p>Hi:${data.data[0].max_temp}<span>&#176;</span>F/Lo:${data.data[0].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard2.innerHTML = `<p>${data.data[1].datetime}</p><img class="icon" src="/img/icons/${data.data[1].weather.icon}.png" alt="icon"><p>Hi:${data.data[1].max_temp}<span>&#176;</span>F/Lo:${data.data[1].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard3.innerHTML = `<p>${data.data[2].datetime}</p><img class="icon" src="/img/icons/${data.data[2].weather.icon}.png" alt="icon"><p>Hi:${data.data[2].max_temp}<span>&#176;</span>F/Lo:${data.data[2].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard4.innerHTML = `<p>${data.data[3].datetime}</p><img class="icon" src="/img/icons/${data.data[3].weather.icon}.png" alt="icon"><p>Hi:${data.data[3].max_temp}<span>&#176;</span>F/Lo:${data.data[3].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard5.innerHTML = `<p>${data.data[4].datetime}</p><img class="icon" src="/img/icons/${data.data[4].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>F/Lo:${data.data[4].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard6.innerHTML = `<p>${data.data[5].datetime}</p><img class="icon" src="/img/icons/${data.data[5].weather.icon}.png" alt="icon"><p>Hi:${data.data[4].max_temp}<span>&#176;</span>F/Lo:${data.data[5].min_temp}<span>&#176;</span>F</p>`
+        forecastDayCard7.innerHTML = `<p>${data.data[6].datetime}</p><img class="icon" src="/img/icons/${data.data[6].weather.icon}.png" alt="icon"><p>Hi:${data.data[6].max_temp}<span>&#176;</span>F/Lo:${data.data[6].min_temp}<span>&#176;</span>F</p>`
         zipCode.value="";
     });
         }

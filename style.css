@@ -37,6 +37,9 @@ html{
     height: 27px;
     width: 75px;
 }
+.zipSearch button:hover{
+    cursor: pointer;
+}
 .quote{
     grid-area: quote;
     border-radius: 5px;
@@ -130,27 +133,30 @@ html{
     width: 35px;
     margin: -5px;
 }
-#weatherTile2{
-    display: none;
-}
-#weatherTile3{
-    display: none;
-}
-#weatherTile4{
-    display: none;
-}
-#weatherTile5{
-    display: none;
-}
-#weatherTile6{
-    display: none;
-}
-#weatherTile7{
-    display: none;
-}
-#weatherTile8{
-    display: none;
-}
-#weatherTile9{
-    display: none;
+@media screen and (max-width:950px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .weatherTile{
+       max-width: 100%;
+       min-width: 360px;
+       margin: 0px;
+       margin-top: 30px;
+    }
+    .currentInfo{
+        margin: 0px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        min-width: 360px
+    }
+    .forecast{
+        flex-direction: column;
+        width: 100%;
+    }
+    .forecastDayCard{
+        min-width: 360px; 
+    }
 }
